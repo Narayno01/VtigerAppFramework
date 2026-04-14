@@ -24,6 +24,15 @@ public class CreatingNewORGpage {
 	
 	@FindBy(xpath="//span[@class='dvHeaderText']")
 	WebElement ActualOrgNameAdded;
+	
+	@FindBy(xpath="//span[@class='dvHeaderText']")
+	WebElement Addlastname;
+
+	
+
+	public WebElement getAddlastname() {
+		return Addlastname;
+	}
 
 	public WebElement getActualOrgNameAdded() {
 		return ActualOrgNameAdded;

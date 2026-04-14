@@ -1,9 +1,12 @@
 package com.crm.Vtiger.Framework.ListenerUtility;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
 import java.util.logging.FileHandler;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
@@ -63,7 +66,7 @@ public class ListenerImplementation implements ITestListener ,ISuiteListener  {
 	public void onTestSuccess(ITestResult result) {
 		
 		System.out.println("======="+result.getMethod().getMethodName()+"====End========");
-		test.log(Status.INFO, result.getMethod().getMethodName()+"===>completed<====");
+		test.log(Status.PASS, result.getMethod().getMethodName()+"===>completed<====");
 		
 	}
 
@@ -76,14 +79,17 @@ public class ListenerImplementation implements ITestListener ,ISuiteListener  {
 		
 		
 		String time=new Date().toString().replace(" ", "_").replace(":", "_");
-		test.addScreenCaptureFromBase64String(filepath, testName+" "+time);
-	    test.log(Status.FAIL, result.getMethod().getMethodName()+"==> FAILED<===");
 		
-//		TakesScreenshot ts=(TakesScreenshot) driver;
-//		File src=ts.getScreenshotAs(OutputType.BASE64);
-//		File dest=new File("");
-//		FileHandler.copy(src,dest);
-//		
+//		try {
+//			//FileUtils.copyToFile(filepath, new File("./screenshot/"+testName+"+"+time+".png"));
+//			FileUtils.copyFile(filepath,new File("./screenshot/"+testName+"+"+time+".png") );
+//		}
+//		catch(IOException e) {
+//			e.printStackTrace();
+//		}
+		test.addScreenCaptureFromBase64String(filepath, testName+"_"+time);
+	    test.log(Status.FAIL, result.getMethod().getMethodName()+"==> FAILED<===");
+			
 	
 			
 		}
@@ -92,6 +98,7 @@ public class ListenerImplementation implements ITestListener ,ISuiteListener  {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 	 
+		 test.log(Status.SKIP, result.getMethod().getMethodName()+"==> SKIPPED<===");
 	}
 
 	@Override

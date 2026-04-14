@@ -37,4 +37,23 @@ public class SimpleTest extends BaseClass{
 		Assert.assertEquals(true, Headermessage.contains(OrgName));
 		
 	}
+	
+	public void createLastnameWithOrgTest() throws EncryptedDocumentException, IOException {
+		String orgName= Elib.getDataFromExcelFile("Sheet1",16,2)+Jlib.getRandomNumber();
+		String lastname= Elib.getDataFromExcelFile("Sheet1",16,3)+Jlib.getRandomNumber();
+		
+	    //step 2: navigate to organization module
+		HomePage hp= new HomePage(driver);
+		hp.getOrgLink().click();
+		
+		//step 3: click on create organization button
+		OrganizationPage org= new OrganizationPage(driver);
+		org.getCreateNewOrgBtn().click();
+		
+		//step 4: enter all the deatils and create new organization
+		CreatingNewORGpage cnop= new CreatingNewORGpage(driver);
+	    cnop.getAddOrgName().sendKeys(orgName);
+		cnop.getAddlastname().sendKeys(lastname);
+		cnop.getSavebtn().click();
+	}
 }
