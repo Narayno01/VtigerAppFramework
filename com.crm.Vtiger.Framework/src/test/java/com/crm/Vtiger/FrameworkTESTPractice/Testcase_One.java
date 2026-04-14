@@ -23,7 +23,7 @@ import com.crm.Vtiger.Framework.Base.BaseClass;
 
 
 public class Testcase_One extends BaseClass {
-	@org.testng.annotations.Test
+
 public void Test() throws IOException {
 	FileInputStream fis=new FileInputStream
 	("C:\\Users\\aDMIN\\eclipse-workspace\\com.Mavenselenium\\src\\test\\resources\\Commondata\\CommondataVtiger.properties");
