@@ -1,0 +1,12 @@
+
+<suite name="Suite">
+
+<listeners>
+<listener class-name="com.crm.Vtiger.Framework.ListenerUtility.ListenerImplementation"/>
+</listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.crm.Vtiger.FrameworkTESTPractice.SimpleTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

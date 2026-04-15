@@ -38,6 +38,7 @@ public class SimpleTest extends BaseClass{
 		
 	}
 	
+	@Test
 	public void createLastnameWithOrgTest() throws EncryptedDocumentException, IOException {
 		String orgName= Elib.getDataFromExcelFile("Sheet1",16,2)+Jlib.getRandomNumber();
 		String lastname= Elib.getDataFromExcelFile("Sheet1",16,3)+Jlib.getRandomNumber();
