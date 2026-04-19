@@ -35,7 +35,7 @@ public class TestScenario2 extends BaseClass {
 
 	@Test
 	public void Testing1() throws IOException {
-        String lastname=Elib.getDataFromExcelFile("Sheet1", 1, 2)+Jlib.getRandomNumber();
+        String lastname=Elib.getDataFromExcelFile("Sheet1", 10, 2)+Jlib.getRandomNumber();
 
 		// click on create contact add name and phone number
 		HomePage hp=new HomePage(driver);
