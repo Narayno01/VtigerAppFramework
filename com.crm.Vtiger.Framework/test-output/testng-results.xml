@@ -1,41 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-14T22:35:52 IST" name="Suite" finished-at="2026-04-14T22:36:10 IST" duration-ms="17357">
+  <suite started-at="2026-04-18T22:42:08 IST" name="Default suite" finished-at="2026-04-18T22:42:09 IST" duration-ms="1243">
     <groups>
     </groups>
-    <test started-at="2026-04-14T22:35:52 IST" name="Test" finished-at="2026-04-14T22:36:10 IST" duration-ms="17357">
-      <class name="com.crm.Vtiger.FrameworkTESTPractice.SimpleTest">
-        <test-method is-config="true" signature="configBS()[pri:0, instance:com.crm.Vtiger.FrameworkTESTPractice.SimpleTest@22ff4249]" started-at="2026-04-14T22:35:47 IST" name="configBS" finished-at="2026-04-14T22:35:52 IST" duration-ms="5053" status="PASS">
+    <test started-at="2026-04-18T22:42:08 IST" name="Default test" finished-at="2026-04-18T22:42:09 IST" duration-ms="1243">
+      <class name="com.crm.Vtiger.Framework.PracticeTest.TestScenario2">
+        <test-method is-config="true" signature="configBS()[pri:0, instance:com.crm.Vtiger.Framework.PracticeTest.TestScenario2@682b2fa]" started-at="2026-04-18T22:42:08 IST" name="configBS" finished-at="2026-04-18T22:42:08 IST" duration-ms="72" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configBS -->
-        <test-method is-config="true" signature="configBC()[pri:0, instance:com.crm.Vtiger.FrameworkTESTPractice.SimpleTest@22ff4249]" started-at="2026-04-14T22:35:52 IST" name="configBC" finished-at="2026-04-14T22:35:53 IST" duration-ms="818" status="PASS">
+        <test-method is-config="true" signature="configBC()[pri:0, instance:com.crm.Vtiger.Framework.PracticeTest.TestScenario2@682b2fa]" started-at="2026-04-18T22:42:08 IST" name="configBC" finished-at="2026-04-18T22:42:09 IST" duration-ms="1212" status="FAIL">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
+            <message>
+              <![CDATA[Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 147.0.7727.57 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'DESKTOP-BML8L32', ip: '127.0.0.1'
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 147.0.7727.57 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'DESKTOP-BML8L32', ip: '127.0.0.1'
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:246)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:99)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:51)
+at com.crm.Vtiger.Framework.Base.BaseClass.configBC(BaseClass.java:63)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configBC -->
-        <test-method is-config="true" signature="configBM()[pri:0, instance:com.crm.Vtiger.FrameworkTESTPractice.SimpleTest@22ff4249]" started-at="2026-04-14T22:35:53 IST" name="configBM" finished-at="2026-04-14T22:35:54 IST" duration-ms="799" status="PASS">
+        <test-method is-config="true" signature="configBM()[pri:0, instance:com.crm.Vtiger.Framework.PracticeTest.TestScenario2@682b2fa]" started-at="2026-04-18T22:42:09 IST" name="configBM" finished-at="2026-04-18T22:42:09 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configBM -->
-        <test-method signature="CreateOrgTest()[pri:0, instance:com.crm.Vtiger.FrameworkTESTPractice.SimpleTest@22ff4249]" started-at="2026-04-14T22:35:54 IST" name="CreateOrgTest" finished-at="2026-04-14T22:36:09 IST" duration-ms="14781" status="PASS">
+        <test-method signature="Testing3()[pri:0, instance:com.crm.Vtiger.Framework.PracticeTest.TestScenario2@682b2fa]" started-at="2026-04-18T22:42:09 IST" name="Testing3" finished-at="2026-04-18T22:42:09 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
+            <message>
+              <![CDATA[Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 147.0.7727.57 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'DESKTOP-BML8L32', ip: '127.0.0.1'
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 147.0.7727.57 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'DESKTOP-BML8L32', ip: '127.0.0.1'
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:246)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:99)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:51)
+at com.crm.Vtiger.Framework.Base.BaseClass.configBC(BaseClass.java:63)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateOrgTest -->
-        <test-method is-config="true" signature="configAM()[pri:0, instance:com.crm.Vtiger.FrameworkTESTPractice.SimpleTest@22ff4249]" started-at="2026-04-14T22:36:09 IST" name="configAM" finished-at="2026-04-14T22:36:09 IST" duration-ms="825" status="PASS">
+        </test-method> <!-- Testing3 -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.crm.Vtiger.Framework.PracticeTest.TestScenario2@682b2fa]" started-at="2026-04-18T22:42:09 IST" name="configAM" finished-at="2026-04-18T22:42:09 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configAM -->
-        <test-method is-config="true" signature="configAC()[pri:0, instance:com.crm.Vtiger.FrameworkTESTPractice.SimpleTest@22ff4249]" started-at="2026-04-14T22:36:09 IST" name="configAC" finished-at="2026-04-14T22:36:10 IST" duration-ms="111" status="PASS">
+        <test-method is-config="true" signature="configAC()[pri:0, instance:com.crm.Vtiger.Framework.PracticeTest.TestScenario2@682b2fa]" started-at="2026-04-18T22:42:09 IST" name="configAC" finished-at="2026-04-18T22:42:09 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configAC -->
-        <test-method is-config="true" signature="configAs()[pri:0, instance:com.crm.Vtiger.FrameworkTESTPractice.SimpleTest@22ff4249]" started-at="2026-04-14T22:36:10 IST" name="configAs" finished-at="2026-04-14T22:36:10 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="configAs()[pri:0, instance:com.crm.Vtiger.Framework.PracticeTest.TestScenario2@682b2fa]" started-at="2026-04-18T22:42:09 IST" name="configAs" finished-at="2026-04-18T22:42:09 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configAs -->
-      </class> <!-- com.crm.Vtiger.FrameworkTESTPractice.SimpleTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- com.crm.Vtiger.Framework.PracticeTest.TestScenario2 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

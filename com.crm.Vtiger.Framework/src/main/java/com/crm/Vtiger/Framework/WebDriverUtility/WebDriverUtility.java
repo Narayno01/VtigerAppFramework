@@ -54,6 +54,11 @@ public void waitForPagetoLoad(WebDriver driver) {
 	 }
 
 	}
+	
+	public void switchTo_mainTab(WebDriver driver) {
+		driver.switchTo().defaultContent();
+	}
+	
 
 	 
 
@@ -97,7 +102,7 @@ public void waitForPagetoLoad(WebDriver driver) {
 
 	 
 
-	 public void select(WebElement element,String text) {
+	 public void selectbyVText(WebElement element,String text) {
 
 		 Select s=new Select(element);
 
@@ -107,7 +112,7 @@ public void waitForPagetoLoad(WebDriver driver) {
 
 	 
 
-	 public void select(WebElement element,int index) {
+	 public void selectbyIndex(WebElement element,int index) {
 
 		 Select s=new Select(element);
 

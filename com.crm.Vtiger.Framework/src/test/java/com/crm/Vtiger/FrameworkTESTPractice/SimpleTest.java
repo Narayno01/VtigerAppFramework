@@ -53,7 +53,7 @@ public class SimpleTest extends BaseClass{
 		//step 4: enter all the deatils and create new organization
 		CreatingNewORGpage cnop= new CreatingNewORGpage(driver);
 	    cnop.getAddOrgName().sendKeys(orgName);
-		cnop.getAddlastname().sendKeys(lastname);
+		//cnop.getAddlastname().sendKeys(lastname);
 		cnop.getSavebtn().click();
 	}
 }

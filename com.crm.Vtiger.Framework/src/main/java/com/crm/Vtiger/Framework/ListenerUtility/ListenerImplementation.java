@@ -79,14 +79,7 @@ public class ListenerImplementation implements ITestListener ,ISuiteListener  {
 		
 		
 		String time=new Date().toString().replace(" ", "_").replace(":", "_");
-		
-//		try {
-//			//FileUtils.copyToFile(filepath, new File("./screenshot/"+testName+"+"+time+".png"));
-//			FileUtils.copyFile(filepath,new File("./screenshot/"+testName+"+"+time+".png") );
-//		}
-//		catch(IOException e) {
-//			e.printStackTrace();
-//		}
+	
 		test.addScreenCaptureFromBase64String(filepath, testName+"_"+time);
 	    test.log(Status.FAIL, result.getMethod().getMethodName()+"==> FAILED<===");
 			

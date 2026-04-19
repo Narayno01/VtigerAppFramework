@@ -22,21 +22,36 @@ public class CreatingNewORGpage {
 	@FindBy(xpath="(//input[@title='Save [Alt+S]'])[1]")
 	WebElement Savebtn;
 	
-	@FindBy(xpath="//span[@class='dvHeaderText']")
-	WebElement ActualOrgNameAdded;
+	@FindBy(xpath="//select[@name='industry']")
+	WebElement AddIndustry;
 	
 	@FindBy(xpath="//span[@class='dvHeaderText']")
-	WebElement Addlastname;
+	WebElement Expected_OrgNameAdded;
+	
+	@FindBy(xpath="//select[@name='accounttype']")
+	WebElement AddType;
+	
+	@FindBy(id="dtlview_Phone")
+	WebElement Expected_Phonenum;
+	
+	public WebElement getExpected_Phonenum() {
+		return Expected_Phonenum;
+	}
 
-	@Findby()
-	private WebElement verifyConfirm;
+	public WebElement getAddIndustry() {
+		return AddIndustry;
+	}
 
-	public WebElement getAddlastname() {
-		return Addlastname;
+	public WebElement getExpected_OrgNameAdded() {
+		return Expected_OrgNameAdded;
+	}
+
+	public WebElement getAddType() {
+		return AddType;
 	}
 
 	public WebElement getActualOrgNameAdded() {
-		return ActualOrgNameAdded;
+		return Expected_OrgNameAdded;
 	}
 
 	public WebElement getAddOrgName() {

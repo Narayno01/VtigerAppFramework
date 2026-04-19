@@ -17,15 +17,18 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.comcast.crm.ObjectRepositoryUtility.ContactPage;
 import com.comcast.crm.ObjectRepositoryUtility.CreatingNewORGpage;
 import com.comcast.crm.ObjectRepositoryUtility.HomePage;
 import com.comcast.crm.ObjectRepositoryUtility.OrganizationPage;
+import com.comcast.crm.ObjectRepositoryUtility.ThroughContact_Orgpage;
 import com.crm.Vtiger.Framework.Base.BaseClass;
 
 public class TestScenario2 extends BaseClass {
@@ -43,13 +46,11 @@ public class TestScenario2 extends BaseClass {
 		cnp.getContactplusicon().click();
 		cnp.getLastname().sendKeys(lastname);
 		cnp.getSavebtn().click();
-	    String Expected=cnp.getExpectedtoconfirm().getText();
+	    String Expected=cnp.getExpected_lastname().getText();
 		
-		if(Expected.contains(lastname)) 
-			System.out.println(lastname+" lastname is added of organization----> passed");
-		
-		else 
-			System.out.println(lastname+" lastname is failed to add");
+	    Assert.assertEquals(true, Expected.contains(lastname));
+	    
+	 
 			
 
 	   
@@ -68,75 +69,21 @@ public class TestScenario2 extends BaseClass {
 		ContactPage cnp=new ContactPage(driver);
 		cnp.getContactplusicon().click();
 		cnp.getLastname().sendKeys(lastname);
-
-//					//Launching browser
-//
-//					WebDriver driver;	
-//
-//					if(Browser=="chrome")
-//						driver=new ChromeDriver();
-//
-//					else if(Browser=="edge")
-//						driver=new EdgeDriver();
-//
-//					else if(Browser=="firefox")
-//						driver=new FirefoxDriver();
-//
-//					else
-//						driver=new ChromeDriver();
-//			        driver.manage().window().maximize();
-//				    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));	
-//
-//					//Accessing webpage==>>URL
-//					driver.get(URL);
-//
-//					//Login into application
-
-//					driver.findElement(By.name("user_name")).sendKeys(UN);
-//					driver.findElement(By.name("user_password")).sendKeys(PW);
-//					driver.findElement(By.id("submitButton")).click();
-
-					// click on create contact add name and phone number
-//					driver.findElement(By.xpath("//a[text()='Contacts']")).click();
-//					driver.findElement(By.xpath("//img[@alt='Create Contact...']")).click();
-//					
-//					//add data in textfield
-//					driver.findElement(By.name("lastname")).sendKeys(lastname);
-			
-//					Date d= new Date();
-//					SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
-//					String startDate= sdf.format(d);
-		
-		            Jlib.getSystemDate();
-		            Jlib.getRequiredDate(30);
-					
-//					Calendar cal= sdf.getCalendar();
-//					cal.add(Calendar.DAY_OF_MONTH, 30);
-//					String End_date=sdf.format(cal.getTime());
 					
 					//support start date
-		            cnp.
-					driver.findElement(By.name("support_start_date")).clear();
-					driver.findElement(By.name("support_start_date")).sendKeys(startDate);
+	    String start=Jlib.getSystemDate();
+        String end=Jlib.getRequiredDate(30);
+		            cnp.getStart_date().clear();
+		            cnp.getStart_date().sendKeys(start);
+		            cnp.getEnd_date().clear();
+		            cnp.getEnd_date().sendKeys(end);
+		            cnp.getSavebtn().click();
+				
+					String Expected_name=cnp.getExpected_lastname().getText();
 					
-					//support end date
-					driver.findElement(By.name("support_end_date")).clear();
-					driver.findElement(By.name("support_end_date")).sendKeys(End_date);
+					Assert.assertEquals(true, Expected_name.contains(lastname));
 					
-					
-					//click on save button
-					driver.findElement(By.xpath("(//input[@name='button'])[1]")).click();
-					
-					String expected_contact=driver.findElement(By.xpath("//span[@class='dvHeaderText']")).getText();
-					
-					if(expected_contact.contains(lastname)) {
-    					System.out.println(lastname+" lastname is added of organization----> passed");
-    				}
-    				else {
-    					System.out.println(lastname+" lastname is failed to add");
-    					
-    				}
-    			    driver.quit();	
+    			 
 	}	    
     			    @Test
     			    public void Testing3() throws IOException {
@@ -151,111 +98,72 @@ public class TestScenario2 extends BaseClass {
     					org.getCreateNewOrgBtn().click();
     					
     					CreatingNewORGpage crog= new CreatingNewORGpage(driver);
-    					crog.getAddlastname().sendKeys(lastname);
+    				
+    					crog.getAddOrgName().sendKeys(OrgName);
+    					crog.getSavebtn();
     					
-    					crog.getActualOrgNameAdded().sendKeys(OrgName);
-    					crog.getSavebtn().click();
+    					String Expected_orgname=crog.getActualOrgNameAdded().getText();
     					
-    					
-    					
-    					//Check Page Header Information == Expected result
-    					String headerInfo=driver.findElement(By.xpath("//span[contains(@class,'dvHeaderText')]")).getText();
-
-    					if(headerInfo.contains(orgName)) 
-    						System.out.println(orgName+"  is created ==PASS");
-    					else
-    						System.out.println(orgName+" is not created==FAIL");
+    					Assert.assertEquals(true, Expected_orgname.contains(OrgName));
 
     					
-    					//Verify Header orgName info ==Expected result
-    					String actualorgName=driver.findElement(By.id("dtlview_Organization Name")).getText();
-    					if(actualorgName.equals(orgName))
-    						System.out.println(orgName+"  is created == PASS");
-    					else
-    						System.out.println(orgName+" is not created ==FAIL");
 
     					
-    					//contact create
-    					driver.findElement(By.xpath("(//a[contains(text(),'Contacts')])[1]")).click();
-    					driver.findElement(By.xpath("//img[contains(@title,'Create Contact')]")).click();
+    					//Contact Page
+    					hp.getContactLink().click();
     					
-    					//add data in textfield
-    					driver.findElement(By.name("lastname")).sendKeys(lastname);
-    					System.out.println(lastname);
+    					ContactPage Cpage=new ContactPage(driver);
     					
-    					//click + icon for organization name
-    				    driver.findElement(By.xpath("(//img[@alt='Select'])[1]")).click();
-    				    
-    				    String parent_window= driver.getWindowHandle();
-    				    
-    				     Set<String> child = driver.getWindowHandles();
-    				     
-    				     for(String obj: child) {
-    				    	 
-    				    	 if(!parent_window.equals(obj)) {
-    				    		 driver.switchTo().window(obj);
-    				    		
-    				    	 }
-    				     }
+    					Cpage.getContactplusicon();
+    					Cpage.getLastname().sendKeys(lastname);
     					
-    				    //switch it
-    				    driver.findElement(By.id("search_txt")).sendKeys(lastname);
-    				    driver.findElement(By.xpath("//input[@name='search']")).click();
-    				    driver.findElement(By.xpath("//a[text()='"+orgName+"']")).click();
-    				    
-    				    driver.switchTo().window(parent_window);
-    				    
-    				    driver.findElement(By.xpath("(//input[@title='Save [Alt+S]'])[1]")).click();
+    					Cpage.getOrgplus_icon().click();
     					
-    				  //Check Page Header Information == Expected result
+    					
+    					ThroughContact_Orgpage Ntab= new ThroughContact_Orgpage(driver);
+    					String partialUrl=Ntab.PartialUrl();
+    					Wlib.switchNewBrowserTab(driver, partialUrl);
+    				    
+    					WebElement Ele=Ntab.getDropdown_forOrg();
+    				    Wlib.selectbyVText(Ele, "Organization Name");
+    				    
+    				    Ntab.getAddText_toSearch().sendKeys(OrgName);
+    				    Ntab.getSearch_nowbtn();
+    				    
+    				    Ntab.getVerify_orgname().click();
+    					
+    				    Wlib.switchTo_mainTab(driver);
+    				    Cpage.getSavebtn(); 
+    				    
+    				   String Header_lastname= Cpage.getHeader_info().getText();
+    				
 
-    					
-    					  headerInfo=driver.findElement(By.xpath(
-    					  "//span[contains(@class,'dvHeaderText')]")).getText();
+    				   Assert.assertEquals(true, Header_lastname.contains(lastname));
     					  
-    					  if(headerInfo.contains(lastname))
     					  
-    					  System.out.println(lastname+"  is created ==PASS");
-    					  
-    					  else
-    					  
-    					  System.out.println(lastname+" is not created==FAIL");
     					  
     					  
     					  
     					  //Verify Header orgName info ==Expected result
     					  
-    					  String
-    					  actualLastName=driver.findElement(By.id("mouseArea_Last Name")).getText();
+    					 String Lastname=Cpage.getExpected_lastname().getText();
     					  
-    					  if(actualLastName.equals(lastname))
+    					 Assert.assertEquals(true, Lastname.contains(lastname));
     					  
-    					  System.out.println(lastname+"  is created == PASS");
-    					  
-    					  else
     					  
     					  System.out.println(lastname+" is not created ==FAIL");
     					  
-    					  
+    					  String actualorgname=Cpage.getExpected_orgname().getText();
     					  
     					  //verify header orgName expected result
     					  
-    					  String
-    					  actualOrgName=driver.findElement(By.id("mouseArea_Organization Name")).
-    					  getText();
-    					  
-    					  if(actualOrgName.trim().equals(orgName))
-    					  
-    					  System.out.println(orgName+"  is created==PASS");
-    					  
-    					  else
-    					  
-    					  System.out.println(orgName+"  is not created==FAIL");
+    					  Assert.assertEquals(true, actualorgname.trim().equals(OrgName));
+    					 
+    					 
     					 
     					
     					
     					
-    					driver.quit();
-
+    				
 }
 }

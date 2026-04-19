@@ -41,15 +41,15 @@ public class Testcase_4 extends BaseClass {
 					cnp.getContactplusicon().click();
 					cnp.getLastname().sendKeys(lastname);
 					cnp.getSavebtn().click();
-				    String Expected=cnp.getExpectedtoconfirm().getText();
+				    //String Expected=cnp.getExpectedtoconfirm().getText();
 					
-					if(Expected.contains(lastname)) 
-    					System.out.println(lastname+" lastname is added of organization----> passed");
-    				
-    				else 
-    					System.out.println(lastname+" lastname is failed to add");
-    					
-    		
+//					if(Expected.contains(lastname)) 
+//    					System.out.println(lastname+" lastname is added of organization----> passed");
+//    				
+//    				else 
+//    					System.out.println(lastname+" lastname is failed to add");
+//    					
+//    		
     			   
 	}
 
